@@ -8,7 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    
+    //Inicia as váriaveis.
     private Button botao;
     private TextView result;
     private EditText idade;
@@ -18,16 +19,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
+        //Associa as variaveis às suas respectivas IDs.
         botao = (Button) findViewById(R.id.botaoId);
         result = (TextView) findViewById(R.id.resultadoId);
         idade = (EditText) findViewById(R.id.idadeId);
-
+        
+        //Evento de clique.
         botao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 entrada = idade.getText().toString();
-
+                
+                //Testa se os valores dos campos retornando mensagens de erro caso sejam inválidos ou informando o resultado caso sejam válidos.
                 if (entrada.isEmpty()) {
                     idade.setError("Campo obrigatorio.");
                 } else if (entrada.length() > 2){
